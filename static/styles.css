@@ -1,0 +1,63 @@
+body {
+  background-color: green; /* Fundo verde */
+  color: white; /* Cor do texto em branco */
+  font-family: Arial, sans-serif; /* Fonte padrão */
+  margin: 20px; /* Margens */
+  padding: 20px; /* Padding */
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+}
+
+.result {
+  margin-top: 20px;
+}
+
+/* Estilos para o botão de voltar */
+.back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-decoration: none;
+  font-size: 50px;
+  color: rgb(247, 245, 245);
+  transition: color 0.3s;
+}
+
+.back-button:hover {
+  color: grey; /* Muda a cor ao passar o mouse */
+}
+
+.back-button i {
+  margin-right: 5px; /* Espaçamento entre o ícone e o texto */
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+input {
+  padding: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.container h1 {
+  text-shadow: 1px 1px 5px red;
+}
