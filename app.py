@@ -10,7 +10,7 @@ def index():
         limite_inferior = int(request.form['lower_limit'])
         limite_superior = int(request.form['upper_limit'])
         session['numero_secreto'] = random.randint(limite_inferior, limite_superior)
-        session['tentativas'] = 0
+        session['tries'] = 0
         session['limite_inferior'] = limite_inferior
         session['limite_superior'] = limite_superior
         return redirect(url_for('jogar'))
@@ -21,15 +21,15 @@ def index():
 def jogar():
     if request.method == 'POST':
         palpite = int(request.form['guess'])
-        session['tentativas'] += 1
+        session['tries'] += 1
         numero_secreto = session['numero_secreto']
 
         if palpite < numero_secreto:
-            resultado = "Muito baixo! Tente novamente."
+            resultado = "Too low! Try Again."
         elif palpite > numero_secreto:
-            resultado = "Muito alto! Tente novamente."
+            resultado = "Too high! Try again."
         else:
-            resultado = f"Parabéns! Você adivinhou o número {numero_secreto} em {session['tentativas']} tentativas."
+            resultado = f"Nice! you guessed the number {numero_secreto} in {session['tries']} tries."
             return redirect(url_for('index'))  # Reinicia o jogo
 
         return render_template('play.html', result=resultado)
